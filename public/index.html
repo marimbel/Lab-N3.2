@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab N3.2: HTML Forms vs REST/JSON</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>From HTML Forms to REST/JSON APIs</h1>
+    <p class="team">Lab N3.2: Marianna Belmares, Nico Savaides, Brent Paterson, Alexandra Guttierez</p>
+    <!-- Filled in by JavaScript once when the page loads.
+         If it changes, the whole page was reloaded. -->
+    <p class="loaded">Page loaded at <strong id="loadedAt"></strong></p>
+  </header>
+
+  <main>
+    <!-- ============ Part A: Traditional HTML form ============ -->
+    <section class="card">
+      <h2>Part A: Traditional HTML Form</h2>
+      <p class="arch">Browser → HTML Form → Express → <b>HTML Response</b> (new page)</p>
+
+      <form action="/readCustomerInfoAndRespond" method="POST">
+        <label>Name <input type="text" name="name" required></label>
+        <label>Email <input type="email" name="email" required></label>
+        <button type="submit">Submit</button>
+      </form>
+
+      <p class="note">Submitting navigates away to the HTML the server sends back. The "page loaded" time resets when you come back.</p>
+    </section>
+
+    <!-- ============ Part B: REST API with fetch() ============ -->
+    <section class="card">
+      <h2>Part B: REST API with fetch()</h2>
+      <p class="arch">Browser JavaScript → fetch() → Express REST API → <b>JSON</b> → Dynamic page update</p>
+
+      <!-- No <form action>: JavaScript sends the data instead of the browser. -->
+      <div class="fields">
+        <label>Name <input type="text" id="name"></label>
+        <label>Email <input type="email" id="email"></label>
+        <button type="button" id="submitBtn">Submit</button>
+      </div>
+
+      <div id="result" class="result" aria-live="polite"></div>
+
+      <details>
+        <summary>Raw JSON from <code>POST /api/customer</code></summary>
+        <pre id="rawJson">(nothing yet)</pre>
+      </details>
+
+      <p class="note">The result appears without a reload. The "page loaded" time stays the same.</p>
+    </section>
+  </main>
+
+  <script src="/js/customer.js"></script>
+</body>
+</html>

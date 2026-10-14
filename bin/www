@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+// Starts the Express app (same layout as an express-generator project).
+const app = require('../app');
+
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+  console.log(`Lab N3.2 running on http://localhost:${port}`);
+});

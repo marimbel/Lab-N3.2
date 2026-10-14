@@ -1,0 +1,17 @@
+{
+  "name": "lab-n3-2-form-to-rest",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CS Web Systems Lab N3.2: HTML form submission vs. REST/JSON API with fetch()",
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "node --watch ./bin/www",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
